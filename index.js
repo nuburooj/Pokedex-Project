@@ -8,20 +8,20 @@ fetch('https://pokeapi.co/api/v2/pokemon?limit=486')
 
 //Fetch general Pokémon data with passed value from selectPokemon
 function fetchPokemonData(pokemonId) {
-    const pokeInfoURL = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`;
+    const pokeInfoURL = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`
     fetch(pokeInfoURL)
     .then((resp) => resp.json())
     .then((data) => renderPokemon(data))
-    .catch((error) => console.error('Error fetching Pokémon data:', error));
+    
 }
 
 //Fetch Pokémon species data ith passed value from selectPokemon
 function fetchPokemonSpeciesData(pokemonId) {
-    const pokeSpeciesURL = `https://pokeapi.co/api/v2/pokemon-species/${pokemonId}`;
+    const pokeSpeciesURL = `https://pokeapi.co/api/v2/pokemon-species/${pokemonId}`
     fetch(pokeSpeciesURL)
     .then((resp) => resp.json())
     .then((data) => renderPokemonDetails(data))
-    .catch((error) => console.error('Error fetching Pokémon species data:', error));
+    
     function renderPokemonDetails(PokeSpeciesArr){ 
         const PokemonName = document.querySelector('.name')
         const PokemonDescription = document.querySelector('.description')
@@ -43,7 +43,7 @@ function renderPokeList(pokeListArr) {
         PokeName.textContent = pokeListObj.name
         PokemonListLocation.append(PokeName)
         
-        PokeName.addEventListener('click', () => selectPokemon(pokeListObj.name));
+        PokeName.addEventListener('click', () => selectPokemon(pokeListObj.name))
         
     })
     
@@ -51,9 +51,9 @@ function renderPokeList(pokeListArr) {
 
 //Update pokeValue with selected pokemon name and pass to fetch functions
 function selectPokemon(pokemonId) {
-    pokeValue = pokemonId;
-    fetchPokemonData(pokeValue);
-    fetchPokemonSpeciesData(pokeValue);
+    pokeValue = pokemonId
+    fetchPokemonData(pokeValue)
+    fetchPokemonSpeciesData(pokeValue)
 }
 
 function renderPokemon(pokeArr){
@@ -77,3 +77,18 @@ function renderPokemon(pokeArr){
     
     
 }
+
+//Search Bar Functionality
+const form = document.querySelector("#search-bar-location")
+form.addEventListener('submit', (e) => {
+
+    e.preventDefault()
+       let pokeInput = document.querySelector("#searchInput")
+       let p = pokeInput.value
+       //console.log(p)
+        let pokeValue = p
+    
+       fetchPokemonData(pokeValue)
+       fetchPokemonSpeciesData(pokeValue)
+})
+
