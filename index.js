@@ -1,3 +1,19 @@
+fetch('https://pokeapi.co/api/v2/pokemon?limit=1302')
+.then((resp) => resp.json())
+.then((data) => renderPokeList(data.results))
+
+function renderPokeList(pokeListArr) {
+    
+    pokeListArr.forEach((pokeListObj) => {
+
+    const PokemonListLocation = document.querySelector('#pokemon-list-location')
+    //Making and appending list of pokemon 
+    const PokeName = document.createElement("li")
+    // console.log(pokeListObj.name)
+    PokeName.textContent = pokeListObj.name
+    PokemonListLocation.append(PokeName)
+    })
+}
 
 fetch("https://pokeapi.co/api/v2/pokemon/1")
 .then((resp) => resp.json())
@@ -7,7 +23,6 @@ fetch("https://pokeapi.co/api/v2/pokemon/1")
 function renderPokemon(pokeArr){
     
     //Locations of Divs
-    const PokemonListLocation = document.querySelector('#pokemon-list-location')
     const PokeImage = document.querySelector('.pokemon-picture')
     const PokemonDetailsLocation = document.querySelector('#pokemon-detail-location')
     
@@ -21,10 +36,6 @@ function renderPokemon(pokeArr){
     
     
     
-    //Making and appending list of pokemon 
-    const PokeName = document.createElement("li")
-    PokeName.textContent = pokeArr.name
-    PokemonListLocation.append(PokeName)
     
     
     //Changing attributes of Pokemon Picture
