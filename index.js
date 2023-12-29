@@ -26,8 +26,8 @@ function fetchPokemonSpeciesData(pokemonId) {
     .then((data) => renderPokemonDetails(data))
     
     function renderPokemonDetails(PokeSpeciesArr){ 
-        const PokemonName = document.querySelector('.name')
-        const PokemonDescription = document.querySelector('.description')
+        const PokemonName = document.querySelector('#name')
+        const PokemonDescription = document.querySelector('#description')
         
         //Changing Attributes of Details 
         PokemonName.textContent = PokeSpeciesArr.names[8].name
@@ -76,9 +76,9 @@ function renderPokemon(pokeArr){
     const PokemonDetailsLocation = document.querySelector('#pokemon-detail-location')
     
     //Details Info
-    const PokemonType = document.querySelector('.type')
-    const PokemonWeight = document.querySelector('.weight')
-    const PokemonAbilities = document.querySelector('.abilities')
+    const PokemonType = document.querySelector('#type')
+    const PokemonWeight = document.querySelector('#weight')
+    const PokemonAbilities = document.querySelector('#abilities')
     
     
     //Changing attributes of Pokemon Picture

@@ -1,0 +1,51 @@
+body {
+    background-image: url(https://cdn.discordapp.com/attachments/1187839958640246864/1190111621549396060/7bcd79.png?ex=65a09cd1&is=658e27d1&hm=1158b53e3583ac57a52ca0c84f29fe631264de57dc33fa52aa26e48ba20a07c4&);
+    background-repeat: no-repeat;
+    /* background-position: center;
+    background-attachment: fixed;
+    background-size: cover; */
+  }
+
+#pokemon-list-location{
+    display: flex;
+    flex-direction: column; 
+    overflow: auto;
+    position: absolute;
+    max-height: 216px; 
+    top: 423px;
+    right: 0;
+    
+        
+}
+
+
+  .pokemon-detail-container {
+    display: flex;
+    flex-direction: row;
+    /* overflow: auto; */
+    position: absolute;
+    top: 6px;
+    right: 220px;
+    justify-content: space-evenly;
+    height: 190px;
+    width: 520px;
+    padding: 20px;
+    margin: 50px;
+    border: 10px solid black;
+    top: -19px;
+    right: -46px;
+  }
+
+.pokemon-picture{
+    display: flex;
+    overflow: auto;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    padding: 20px;
+    margin: 50px;
+    border: 10px solid black;
+    top: 200px;
+    left: 150px;
+}
+   
