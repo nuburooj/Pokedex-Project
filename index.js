@@ -45,6 +45,14 @@ function renderPokeList(pokeListArr) {
         }
     })
 
+    document.addEventListener('keydown', function (event) { 
+        if (event.key === 'ArrowUp') {
+          // When down arrow key is pressed, decrement the selectedIndex
+          selectedIndex = (selectedIndex - 1) % pokeList.length;
+          selectPokemon(pokeList[selectedIndex].name);
+        }
+    })
+
     pokeListArr.forEach((pokeListObj) => {
         
         const PokemonListLocation = document.querySelector('#pokemon-list-location')
