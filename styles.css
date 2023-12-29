@@ -1,5 +1,5 @@
 body {
-    background-image: url(https://cdn.discordapp.com/attachments/1187839958640246864/1190111621549396060/7bcd79.png?ex=65a09cd1&is=658e27d1&hm=1158b53e3583ac57a52ca0c84f29fe631264de57dc33fa52aa26e48ba20a07c4&);
+    background-image: url(https://cdn.discordapp.com/attachments/1187839958640246864/1190152006837481533/7bcd79_upscaled.png?ex=65a0c26e&is=658e4d6e&hm=838120f7c93cb01eded5ce54a83de096c2d58539a86cf87a9dd0ae9ccd5a345a&);
     background-repeat: no-repeat;
     /* background-position: center;
     background-attachment: fixed;
@@ -8,13 +8,12 @@ body {
 
 #pokemon-list-location{
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     overflow: auto;
     position: absolute;
-    max-height: 216px; 
-    top: 423px;
+    max-height: 201px;
+    top: 383px;
     right: 0;
-    
         
 }
 
@@ -25,15 +24,14 @@ body {
     /* overflow: auto; */
     position: absolute;
     top: 6px;
-    right: 220px;
     justify-content: space-evenly;
-    height: 190px;
-    width: 520px;
+    height: 163px;
+    width: 914px;
     padding: 20px;
     margin: 50px;
     border: 10px solid black;
-    top: -19px;
-    right: -46px;
+    top: -22px;
+    right: -50px;
   }
 
 .pokemon-picture{
@@ -45,7 +43,95 @@ body {
     padding: 20px;
     margin: 50px;
     border: 10px solid black;
-    top: 200px;
-    left: 150px;
+    top: 165px;
+    left: 230px;
 }
    
+
+#description{
+    display: flex;
+    flex-direction: row;
+    /* overflow: auto; */
+    position: absolute;
+    top: 6px;
+    justify-content: space-evenly;
+    height: 214px;
+    width: 1773px;
+    padding: 20px;
+    margin: 50px;
+    border: 10px solid black;
+    top: 620px;
+    left: -6px;
+}
+
+#search-bar-location{
+    position: absolute;
+    top: 6px;
+    justify-content: space-evenly;
+    height: 21px;
+    width: 240px;
+    padding: 20px;
+    margin: 50px;
+    border: 10px solid black;
+    top: 336px;
+    right: 605px;
+
+}
+
+#name{
+    display: flex;
+    overflow: auto;
+    position: absolute;
+    height: 17px;
+    width: 95px;
+    padding: 20px;
+    margin: 50px;
+    border: 10px solid black;
+    top: -39px;
+    left: -43px;
+}
+
+#type{
+    display: flex;
+    overflow: auto;
+    position: absolute;
+    height: 17px;
+    width: 66px;
+    padding: 20px;
+    margin: 50px;
+    border: 10px solid black;
+    top: 56px;
+    left: -43px;
+}
+
+#weight{
+    display: flex;
+    overflow: auto;
+    position: absolute;
+    height: 17px;
+    width: 68px;
+    padding: 20px;
+    margin: 50px;
+    border: 10px solid black;
+    top: -39px;
+    left: 345px;
+}
+
+#abilities{
+    display: flex;
+    overflow: auto;
+    position: absolute;
+    height: 17px;
+    width: 89px;
+    padding: 20px;
+    margin: 50px;
+    border: 10px solid black;
+    top: 58px;
+    left: 345px
+}
+
+#description{
+    /* position: absolute;
+    top: 6px; */
+
+}
