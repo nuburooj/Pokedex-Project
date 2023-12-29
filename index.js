@@ -1,10 +1,13 @@
 
 let pokeValue = '1'
+let selectedIndex = 0; // Track the selected index
+
 
 
 fetch('https://pokeapi.co/api/v2/pokemon?limit=486')
 .then((resp) => resp.json())
 .then((data) => renderPokeList(data.results))
+
 
 //Fetch general Pokémon data with passed value from selectPokemon
 function fetchPokemonData(pokemonId) {
@@ -33,7 +36,15 @@ function fetchPokemonSpeciesData(pokemonId) {
 }
 
 function renderPokeList(pokeListArr) {
-    
+
+    document.addEventListener('keydown', function (event) { 
+        if (event.key === 'ArrowDown') {
+          // When down arrow key is pressed, increment the selectedIndex
+          selectedIndex = (selectedIndex + 1) % pokeList.length;
+          selectPokemon(pokeList[selectedIndex].name);
+        }
+    })
+
     pokeListArr.forEach((pokeListObj) => {
         
         const PokemonListLocation = document.querySelector('#pokemon-list-location')
@@ -42,11 +53,14 @@ function renderPokeList(pokeListArr) {
         // console.log(pokeListObj.name)
         PokeName.textContent = pokeListObj.name
         PokemonListLocation.append(PokeName)
-        
+          
+
         PokeName.addEventListener('click', () => selectPokemon(pokeListObj.name))
-        
+  
+           
     })
-    
+    let pokeList = ""
+    pokeList = pokeListArr
 }
 
 //Update pokeValue with selected pokemon name and pass to fetch functions
