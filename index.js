@@ -45,7 +45,7 @@ function renderPokeList(pokeListArr) {
         }
     })
 
-    document.addEventListener('keyup', function (event) { 
+    document.addEventListener('keydown', function (event) { 
         if (event.key === 'ArrowUp') {
           // When down arrow key is pressed, decrement the selectedIndex
           selectedIndex = (selectedIndex - 1) % pokeList.length;
