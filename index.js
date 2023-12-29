@@ -30,7 +30,7 @@ function fetchPokemonSpeciesData(pokemonId) {
         const PokemonDescription = document.querySelector('#description')
         
         //Changing Attributes of Details 
-        PokemonName.textContent = PokeSpeciesArr.names[8].name
+        PokemonName.textContent = "Name: " + PokeSpeciesArr.names[8].name
         PokemonDescription.textContent = PokeSpeciesArr["flavor_text_entries"][0]["flavor_text"]
     }
 }
@@ -85,9 +85,9 @@ function renderPokemon(pokeArr){
     PokeImage.src = pokeArr.sprites.front_default
     PokeImage.alt = pokeArr.name
     
-    PokemonType.textContent = pokeArr.types[0].type.name
-    PokemonWeight.textContent = pokeArr.weight + " lbs"
-    PokemonAbilities.textContent = pokeArr.abilities[0].ability.name
+    PokemonType.textContent = "Type: " + pokeArr.types[0].type.name
+    PokemonWeight.textContent = "Weight: " + pokeArr.weight + " lbs"
+    PokemonAbilities.textContent = "Abilities: " + pokeArr.abilities[0].ability.name
     
     
 }
