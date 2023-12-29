@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Pokemon Pixel Font Regular';
+    src: url('https://www.fontsaddict.com/fontface/pokemon-pixel-font-regular.ttf');
+  }
+
+
+
 body {
     background-image: url(https://cdn.discordapp.com/attachments/1187839958640246864/1190152006837481533/7bcd79_upscaled.png?ex=65a0c26e&is=658e4d6e&hm=838120f7c93cb01eded5ce54a83de096c2d58539a86cf87a9dd0ae9ccd5a345a&);
     background-repeat: no-repeat;
@@ -6,15 +13,19 @@ body {
     background-size: cover; */
   }
 
-#pokemon-list-location{
+#pokemon-list-location{  
     display: flex;
     flex-direction: column;
     overflow: auto;
     position: absolute;
     max-height: 201px;
+    width: 267px;
     top: 383px;
     right: 0;
-        
+    font-family: 'PixGamer', sans-serif;
+    font-size: 49px;
+    border: 2px solid red;
+    background-color: lightgoldenrodyellow;
 }
 
 
@@ -32,19 +43,21 @@ body {
     border: 10px solid black;
     top: -22px;
     right: -50px;
+    font-family: 'PixGamer', sans-serif;
+    font-size: 37px;
   }
 
 .pokemon-picture{
     display: flex;
     overflow: auto;
     position: absolute;
-    height: 100px;
-    width: 100px;
+    height: 394px;
+    width: 546px;
     padding: 20px;
     margin: 50px;
-    border: 10px solid black;
-    top: 165px;
-    left: 230px;
+    /* border: 10px solid black; */
+    top: 33px;
+    left: 5px;
 }
    
 
@@ -59,9 +72,12 @@ body {
     width: 1773px;
     padding: 20px;
     margin: 50px;
-    border: 10px solid black;
+    /* border: 10px solid black; */
     top: 620px;
     left: -6px;
+    font-family: 'PixGamer', sans-serif;
+    font-size: 67px;
+    
 }
 
 #search-bar-location{
@@ -75,6 +91,8 @@ body {
     border: 10px solid black;
     top: 336px;
     right: 605px;
+    font-family: 'PixGamer', sans-serif
+    
 
 }
 
@@ -83,7 +101,7 @@ body {
     overflow: auto;
     position: absolute;
     height: 17px;
-    width: 95px;
+    width: 274px;
     padding: 20px;
     margin: 50px;
     border: 10px solid black;
@@ -96,7 +114,7 @@ body {
     overflow: auto;
     position: absolute;
     height: 17px;
-    width: 66px;
+    width: 274px;
     padding: 20px;
     margin: 50px;
     border: 10px solid black;
@@ -109,12 +127,12 @@ body {
     overflow: auto;
     position: absolute;
     height: 17px;
-    width: 68px;
+    width: 354px;
     padding: 20px;
     margin: 50px;
     border: 10px solid black;
     top: -39px;
-    left: 345px;
+    left: 425px;
 }
 
 #abilities{
@@ -122,16 +140,10 @@ body {
     overflow: auto;
     position: absolute;
     height: 17px;
-    width: 89px;
+    width: 354px;
     padding: 20px;
     margin: 50px;
     border: 10px solid black;
     top: 58px;
-    left: 345px
-}
-
-#description{
-    /* position: absolute;
-    top: 6px; */
-
+    left: 425px;
 }
