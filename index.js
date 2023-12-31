@@ -40,7 +40,7 @@ function renderPokeList(pokeListArr) {
     document.addEventListener('keydown', function (event) { 
         if (event.key === 'ArrowDown') {
           // When down arrow key is pressed, increment the selectedIndex
-          selectedIndex = (selectedIndex + 1) % pokeList.length;
+          selectedIndex = selectedIndex < pokeList.length - 1 ? selectedIndex + 1 : selectedIndex;
           selectPokemon(pokeList[selectedIndex].name);
         }
     })
@@ -48,18 +48,20 @@ function renderPokeList(pokeListArr) {
     document.addEventListener('keydown', function (event) { 
         if (event.key === 'ArrowUp') {
           // When down arrow key is pressed, decrement the selectedIndex
-          selectedIndex = (selectedIndex - 1) % pokeList.length;
+          selectedIndex = selectedIndex > 0 ? selectedIndex - 1 : 0;
           selectPokemon(pokeList[selectedIndex].name);
         }
     })
 
-    pokeListArr.forEach((pokeListObj) => {
+    pokeListArr.forEach((pokeListObj, index) => {
         
         const PokemonListLocation = document.querySelector('#pokemon-list-location')
         //Making and appending list of pokemon 
         const PokeName = document.createElement("li")
         // console.log(pokeListObj.name)
         PokeName.textContent = pokeListObj.name
+        //Creates an ID for each list item
+        PokeName.id = `poke-${index}`
         PokemonListLocation.append(PokeName)
           
 
@@ -76,6 +78,13 @@ function selectPokemon(pokemonId) {
     pokeValue = pokemonId
     fetchPokemonData(pokeValue)
     fetchPokemonSpeciesData(pokeValue)
+    
+    // Scroll to the selected Pokémon
+    const selectedPoke = document.querySelector(`#poke-${selectedIndex}`);
+    if (selectedPoke) {
+        const listContainer = document.querySelector('#pokemon-list-location');
+        listContainer.scrollTop = selectedPoke.offsetTop;
+    }
 }
 
 function renderPokemon(pokeArr){
