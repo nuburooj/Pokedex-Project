@@ -121,6 +121,8 @@ const form = document.querySelector("#search-bar-location")
 form.addEventListener('submit', (e) => {
 
     e.preventDefault()
+    const audioElement = new Audio("Pokemon (A Button) - Sound Effect (HD).mp3");
+          audioElement.play();
        let pokeInput = document.querySelector("#searchInput")
        let p = pokeInput.value
        //console.log(p)
