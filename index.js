@@ -131,5 +131,5 @@ form.addEventListener('submit', (e) => {
 })
 
 window.addEventListener("load", (event) => {
-   selectPokemon(1);
-})
+    selectPokemon(1);
+ })
