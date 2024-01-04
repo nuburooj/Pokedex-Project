@@ -42,6 +42,9 @@ function renderPokeList(pokeListArr) {
           // When down arrow key is pressed, increment the selectedIndex
           selectedIndex = selectedIndex < pokeList.length - 1 ? selectedIndex + 1 : selectedIndex;
           selectPokemon(pokeList[selectedIndex].name);
+          const audioElement = new Audio("Pokemon (A Button) - Sound Effect (HD).mp3");
+          audioElement.play();
+
         }
     })
 
@@ -50,6 +53,8 @@ function renderPokeList(pokeListArr) {
           // When down arrow key is pressed, decrement the selectedIndex
           selectedIndex = selectedIndex > 0 ? selectedIndex - 1 : 0;
           selectPokemon(pokeList[selectedIndex].name);
+          const audioElement = new Audio("Pokemon (A Button) - Sound Effect (HD).mp3");
+          audioElement.play();
         }
     })
 
@@ -66,6 +71,7 @@ function renderPokeList(pokeListArr) {
           
 
         PokeName.addEventListener('click', () => selectPokemon(pokeListObj.name))
+        
   
            
     })
@@ -78,7 +84,8 @@ function selectPokemon(pokemonId) {
     pokeValue = pokemonId
     fetchPokemonData(pokeValue)
     fetchPokemonSpeciesData(pokeValue)
-    
+    const audioElement = new Audio("Pokemon (A Button) - Sound Effect (HD).mp3");
+          audioElement.play();
     // Scroll to the selected Pokémon
     const selectedPoke = document.querySelector(`#poke-${selectedIndex}`);
     if (selectedPoke) {
@@ -114,6 +121,8 @@ const form = document.querySelector("#search-bar-location")
 form.addEventListener('submit', (e) => {
 
     e.preventDefault()
+    const audioElement = new Audio("Pokemon (A Button) - Sound Effect (HD).mp3");
+          audioElement.play();
        let pokeInput = document.querySelector("#searchInput")
        let p = pokeInput.value
        //console.log(p)
@@ -123,3 +132,6 @@ form.addEventListener('submit', (e) => {
        fetchPokemonSpeciesData(pokeValue)
 })
 
+window.addEventListener("load", (event) => {
+    selectPokemon(1);
+ })
