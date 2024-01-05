@@ -1,9 +1,9 @@
 
-let pokeValue = '1'
+let pokeValue = '1' // Used to change endpoints in the API for fetching
 let selectedIndex = 0; // Track the selected index
 
 
-
+//Fetch the main pokemon list
 fetch('https://pokeapi.co/api/v2/pokemon?limit=486')
 .then((resp) => resp.json())
 .then((data) => renderPokeList(data.results))
@@ -18,20 +18,21 @@ function fetchPokemonData(pokemonId) {
     
 }
 
-//Fetch Pokémon species data ith passed value from selectPokemon
+//Fetch Pokémon species data with passed value from selectPokemon
 function fetchPokemonSpeciesData(pokemonId) {
     const pokeSpeciesURL = `https://pokeapi.co/api/v2/pokemon-species/${pokemonId}`
     fetch(pokeSpeciesURL)
     .then((resp) => resp.json())
     .then((data) => renderPokemonDetails(data))
     
-    function renderPokemonDetails(PokeSpeciesArr){ 
-        const PokemonName = document.querySelector('#name')
-        const PokemonDescription = document.querySelector('#description')
+    //Renders data from the Species endpoint of the API
+    function renderPokemonDetails(pokeSpeciesArr){ 
+        const pokemonName = document.querySelector('#name')
+        const pokemonDescription = document.querySelector('#description')
         
-        //Changing Attributes of Details 
-        PokemonName.textContent = "Name: " + PokeSpeciesArr.names[8].name
-        PokemonDescription.textContent = PokeSpeciesArr["flavor_text_entries"][0]["flavor_text"]
+        //Grabs pokemon name and flavor text and renders to page
+        pokemonName.textContent = "Name: " + pokeSpeciesArr.names[8].name
+        pokemonDescription.textContent = pokeSpeciesArr["flavor_text_entries"][0]["flavor_text"]
     }
 }
 
@@ -60,19 +61,20 @@ function renderPokeList(pokeListArr) {
 
     pokeListArr.forEach((pokeListObj, index) => {
         
-        const PokemonListLocation = document.querySelector('#pokemon-list-location')
+        const pokemonListLocation = document.querySelector('#pokemon-list-location')
         //Making and appending list of pokemon 
-        const PokeName = document.createElement("li")
+        const pokeName = document.createElement("li")
         // console.log(pokeListObj.name)
-        PokeName.textContent = pokeListObj.name.toUpperCase()
+        pokeName.textContent = pokeListObj.name.toUpperCase()
         //Creates an ID for each list item
-        PokeName.id = `poke-${index}`
-        PokemonListLocation.append(PokeName)
+        pokeName.id = `poke-${index}`
+        pokemonListLocation.append(pokeName)
           
 
-        PokeName.addEventListener('click', () => selectPokemon(pokeListObj.name))
-        
-  
+        pokeName.addEventListener('click', () => {
+            // Assign selectedIndex to index, then call selectPokemon
+            selectedIndex = index
+            selectPokemon(pokeListObj.name)})
            
     })
     let pokeList = ""
@@ -82,6 +84,7 @@ function renderPokeList(pokeListArr) {
 //Update pokeValue with selected pokemon name and pass to fetch functions
 function selectPokemon(pokemonId) {
     pokeValue = pokemonId
+     
     fetchPokemonData(pokeValue)
     fetchPokemonSpeciesData(pokeValue)
     const audioElement = new Audio("Pokemon (A Button) - Sound Effect (HD).mp3");
@@ -96,22 +99,22 @@ function selectPokemon(pokemonId) {
 
 function renderPokemon(pokeArr){
     //Locations of Divs
-    const PokeImage = document.querySelector('.pokemon-picture')
+    const pokeImage = document.querySelector('.pokemon-picture')
     const PokemonDetailsLocation = document.querySelector('#pokemon-detail-location')
     
     //Details Info
-    const PokemonType = document.querySelector('#type')
-    const PokemonWeight = document.querySelector('#weight')
-    const PokemonAbilities = document.querySelector('#abilities')
+    const pokemonType = document.querySelector('#type')
+    const pokemonWeight = document.querySelector('#weight')
+    const pokemonAbilities = document.querySelector('#abilities')
     
     
     //Changing attributes of Pokemon Picture
-    PokeImage.src = pokeArr.sprites.front_default
-    PokeImage.alt = pokeArr.name
+    pokeImage.src = pokeArr.sprites.front_default
+    pokeImage.alt = pokeArr.name
     
-    PokemonType.textContent = "Type: " + pokeArr.types[0].type.name
-    PokemonWeight.textContent = "Weight: " + pokeArr.weight + " lbs"
-    PokemonAbilities.textContent = "Abilities: " + pokeArr.abilities[0].ability.name
+    pokemonType.textContent = "Type: " + pokeArr.types[0].type.name
+    pokemonWeight.textContent = "Weight: " + pokeArr.weight + " lbs"
+    pokemonAbilities.textContent = "Abilities: " + pokeArr.abilities[0].ability.name
     
     
 }
@@ -127,11 +130,12 @@ form.addEventListener('submit', (e) => {
        let p = pokeInput.value
        //console.log(p)
         let pokeValue = p
-    
+        //Change API endpoint based on input
        fetchPokemonData(pokeValue)
        fetchPokemonSpeciesData(pokeValue)
 })
 
+//Sets 'bulbasaur' as the default on page load
 window.addEventListener("load", (event) => {
     selectPokemon(1);
  })
