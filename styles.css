@@ -3,29 +3,63 @@
     src: url('https://www.fontsaddict.com/fontface/pokemon-pixel-font-regular.ttf');
   }
 
+header {
+    font-family: 'Pokemon Solid', sans-serif;
+    top: 211px;
+    position: absolute;
+    left: 947px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #354fad;
+    color: #e8c602;
+    font-size: 43px;
+}
 
+#trainer-container{
+    display: flex;
+    flex-direction: unset;
+    font-family: 'Pokemon Solid', sans-serif;
+    top: 364px;
+    position: fixed;
+    left: 1052px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #354fac;
+    color: #e8c602;
+    font-size: 26px;
+    width: 188px;
+    height: 164px;
+    /* border: solid black; */
+    padding: 0px;
+    align-items: center;
+    justify-content: center;
+    line-height: 37px;
+}
 
 body {
     background-image: url(https://cdn.discordapp.com/attachments/1187839958640246864/1190152006837481533/7bcd79_upscaled.png?ex=65a0c26e&is=658e4d6e&hm=838120f7c93cb01eded5ce54a83de096c2d58539a86cf87a9dd0ae9ccd5a345a&);
     background-repeat: no-repeat;
-    /* background-position: center;
+    background-position: top;
     background-attachment: fixed;
-    background-size: cover; */
+    background-size: cover;
   }
 
-#pokemon-list-location{  
+#pokemon-list-location{ 
+    list-style-type: auto;
     display: flex;
     flex-direction: column;
     overflow: auto;
-    position: absolute;
+    position: fixed;
     max-height: 201px;
     width: 267px;
     top: 383px;
     right: 0;
     font-family: 'PixGamer', sans-serif;
     font-size: 49px;
-    border: 2px solid red;
+    border: 2px solid #eded2c;
+    border-radius: 10px;
     background-color: lightgoldenrodyellow;
+    justify-content: space-between;
+    align-items: normal;
+    padding-left: 17px;
 }
 
 
@@ -36,15 +70,16 @@ body {
     position: absolute;
     top: 6px;
     justify-content: space-evenly;
-    height: 163px;
-    width: 914px;
+    height: 180px;
+    width: 1120px;
+    border-radius: 51px;
     padding: 20px;
     margin: 50px;
-    border: 10px solid black;
-    top: -22px;
-    right: -50px;
+    border: 4px solid black;
+    top: -24px;
+    right: -101px;
     font-family: 'PixGamer', sans-serif;
-    font-size: 37px;
+    font-size: 37px
   }
 
 .pokemon-picture{
@@ -88,10 +123,10 @@ body {
     width: 240px;
     padding: 20px;
     margin: 50px;
-    border: 10px solid black;
-    top: 336px;
-    right: 605px;
-    font-family: 'PixGamer', sans-serif
+    /* border: 10px solid black; */
+    top: 242px;
+    right: -48px;
+    font-family: 'PixGamer', sans-serif;
     
 
 }
@@ -99,51 +134,69 @@ body {
 #name{
     display: flex;
     overflow: auto;
-    position: absolute;
+    position: fixed;
     height: 17px;
     width: 274px;
     padding: 20px;
     margin: 50px;
-    border: 10px solid black;
-    top: -39px;
-    left: -43px;
+    border: 6px solid black;
+    border-radius: 10px;
+    top: -12px;
+    right: 561px;
+    font-weight: bold;
+    justify-content: center;
+    padding-bottom: 40px;
 }
 
 #type{
     display: flex;
     overflow: auto;
-    position: absolute;
+    position: fixed;
     height: 17px;
     width: 274px;
     padding: 20px;
     margin: 50px;
-    border: 10px solid black;
-    top: 56px;
-    left: -43px;
+    border: 6px solid black;
+    border-radius: 10px;
+    top: 101px;
+    right: 562px;
+    font-weight: bold;
+    justify-content: center;
+    padding-bottom: 40px;
 }
 
 #weight{
     display: flex;
     overflow: auto;
-    position: absolute;
+    position: fixed;
     height: 17px;
-    width: 354px;
+    width: 274px;
     padding: 20px;
     margin: 50px;
-    border: 10px solid black;
-    top: -39px;
-    left: 425px;
+    border: 6px solid black;
+    border-radius: 10px;
+    top: -12px;
+    right: 100px;
+    font-weight: bold;
+    justify-content: center;
+    padding-bottom: 40px;
 }
+
 
 #abilities{
     display: flex;
     overflow: auto;
-    position: absolute;
+    position: fixed;
     height: 17px;
-    width: 354px;
+    width: 274px;
     padding: 20px;
     margin: 50px;
-    border: 10px solid black;
-    top: 58px;
-    left: 425px;
+    border: 6px solid black;
+    border-radius: 10px;
+    top: 101px;
+    right: 100px;
+    font-weight: bold;
+    justify-content: center;
+    padding-bottom: 40px;
 }
+
