@@ -64,7 +64,7 @@ function renderPokeList(pokeListArr) {
         //Making and appending list of pokemon 
         const PokeName = document.createElement("li")
         // console.log(pokeListObj.name)
-        PokeName.textContent = pokeListObj.name
+        PokeName.textContent = pokeListObj.name.toUpperCase()
         //Creates an ID for each list item
         PokeName.id = `poke-${index}`
         PokemonListLocation.append(PokeName)
